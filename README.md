@@ -2,6 +2,10 @@
 
 This ticket booking app covers Flutter for very beginners to advanced learners. We start from very simple ui like drawing text to complex layout using stack and mixture of column and row widget.
 
+![bookingapp](https://github.com/ghbishal/booking_app_flutter/assets/93113583/4f6ca779-2507-4ebf-ad4e-cf31307da67c)
+
+
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
