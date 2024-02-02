@@ -2,6 +2,7 @@ import 'package:booking_app_flutter/utils/app_layout.dart';
 import 'package:booking_app_flutter/utils/app_styles.dart';
 import 'package:booking_app_flutter/wigets/thick_container.dart';
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 
 class TicketView extends StatelessWidget {
   const TicketView({super.key});
@@ -84,6 +85,7 @@ class TicketView extends StatelessWidget {
                       )
                     ],
                   ),
+                  const Gap(3),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -113,7 +115,66 @@ class TicketView extends StatelessWidget {
                   ),
                 ],
               ),
-            )
+            ),
+            Container(
+              color: Styles.orangeColor,
+              child: Row(
+                children: [
+                  const SizedBox(
+                    height: 20,
+                    width: 10,
+                    child: DecoratedBox(
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.only(
+                          topRight: Radius.circular(10),
+                          bottomRight: Radius.circular(10),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.all(12.0),
+                      child: LayoutBuilder(
+                        builder:
+                            (BuildContext context, BoxConstraints constraints) {
+                          return Flex(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            mainAxisSize: MainAxisSize.max,
+                            direction: Axis.horizontal,
+                            children: List.generate(
+                              (constraints.constrainWidth() / 15).floor(),
+                              (index) => const SizedBox(
+                                  width: 5,
+                                  height: 1,
+                                  child: DecoratedBox(
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                    ),
+                                  )),
+                            ),
+                          );
+                        },
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 20,
+                    width: 10,
+                    child: DecoratedBox(
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(10),
+                          bottomLeft: Radius.circular(10),
+                        ),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ),
           ],
         ),
       ),
